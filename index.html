@@ -11,7 +11,7 @@
 
 <body>
 
-    <h2>Find out how many days until your birthday!</h2>
+    <h2 id="title">Find out how many days until your birthday!</h2>
     <div class="bday-container">
         <div class="header">
             <h3>Select your birthday</h3>
@@ -39,12 +39,12 @@
             <div class="day">
                 <label>Date</label>
                 </br>
-                <input type="text" id="day" name="day" required>
+                <input type="text" id="day" name="day" autocomplete="off">
                 <div id="msg"></div>
             </div>
         </div>
         <div class="btn">
-            <button id="btnCalculate">Calculate</button>
+            <button id="btnCalculate" onclick="calculate()">Calculate</button>
         </div>
     </div>
     <div class="display-countdown">
@@ -66,7 +66,9 @@
         </div>
         <h3 class="coming-year"></h3>
     </div>
-
+    <div class="message">
+        <p id="until"></p>
+    </div>
     <script src="index.js"></script>
 </body>
 

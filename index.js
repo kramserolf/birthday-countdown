@@ -35,13 +35,17 @@ const formatTime = time => {
     return time < 10 ? `0${time}` : time;
 };
 
-
-document.getElementById("btnCalculate").addEventListener("click", e => {
-    e.preventDefault();
+// show countdown
+const calculate = () => {
     if (birthDate.value.length === 0) {
         document.getElementById("msg").innerHTML = "<h4 class='error'>Please fill up birthdate field</h4>";
         setTimeout(() => document.querySelector(".error").remove(), 3000);
     } else {
         countDown();
+        showCountdown.style.display = "flex";
+        document.getElementById("btnCalculate").disabled = true;
+        document.querySelector(".bday-container").style.display = "none";
+        document.querySelector("#title").innerHTML = "<h1>There are only</h1>";
+        document.querySelector("#until").innerHTML = "until your <h4 id='birthday'>Birthday!</h4> <img src='images/birthday.png'>";
     }
-});
+};
